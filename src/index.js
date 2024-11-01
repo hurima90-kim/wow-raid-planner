@@ -1,13 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App.js";
 import reportWebVitals from "./reportWebVitals.js";
+import { ChakraProvider, createSystem, defineConfig } from "@chakra-ui/react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const config = defineConfig({
+  theme: {
+    tokens: {
+      colors: {},
+    },
+  },
+});
+const system = createSystem(config);
 root.render(
   <React.StrictMode>
-    <App />
+    <ChakraProvider value={system}>
+      <App />
+    </ChakraProvider>
   </React.StrictMode>
 );
 
