@@ -1,5 +1,8 @@
 {
   "name": "wow-raid-planner",
+  "main": "public/electron.js",
+  "homepage": "./",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,14 +11,16 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "react-start": "BROWSER=none npm start",
+    "electron-start": "electron ."
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +39,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "electron": "^33.0.2",
+    "electron-is-dev": "^3.0.1"
   }
 }
